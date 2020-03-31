@@ -17,11 +17,11 @@ section .text
 	global ft_bzero
 
 ft_bzero:
-	mov rcx, 0           ; set rcx (counter) to 0
-	mov rax, rdi     ; load string (s) into rax
+	mov rcx, 0               ; set rcx (counter) to 0
+	mov rax, rdi             ; load string (s) into rax
 loop:
-	mov BYTE [rax + rcx], 0           ; replace content by '\0'
-	inc rcx              ; increment rcx, aka counter of loop
-	cmp rcx, rsi         ; compare rcx with 19
-	jl loop              ; if rcx < 19, jump to loop label
+	mov BYTE [rax + rcx], 0  ; replace content by '\0'
+	inc rcx                  ; increment rcx, aka counter of loop
+	cmp rcx, rsi             ; compare rcx with 19
+	jl loop                  ; if rcx < rsi (second parameter), loop
 	ret
