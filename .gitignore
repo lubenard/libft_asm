@@ -1,0 +1,11 @@
+.DS_Store
+*.a
+*.o
+objs
+vgcore.*
+*.swp
+*.gen
+*.dSYM
+*.swiftdoc
+*.gen
+core
