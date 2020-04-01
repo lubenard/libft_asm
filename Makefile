@@ -6,7 +6,7 @@
 #    By: lubenard <lubenard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/30 16:12:37 by lubenard          #+#    #+#              #
-#    Updated: 2020/04/01 13:09:02 by lubenard         ###   ########.fr        #
+#    Updated: 2020/04/01 17:42:08 by lubenard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,9 @@ FILES	=	ft_isascii.s	\
 			ft_isalpha.s	\
 			ft_isdigit.s	\
 			ft_isprint.s	\
+			ft_toupper.s	\
+			ft_tolower.s	\
+			ft_puts.s		\
 			ft_bzero.s		\
 			ft_strlen.s		
 
