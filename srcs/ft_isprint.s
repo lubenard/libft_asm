@@ -1,7 +1,7 @@
 ; **************************************************************************** ;
 ;                                                                              ;
 ;                                                         :::      ::::::::    ;
-;    ft_isascii.s                                       :+:      :+:    :+:    ;
+;    ft_isprint.s                                       :+:      :+:    :+:    ;
 ;                                                     +:+ +:+         +:+      ;
 ;    By: lubenard <lubenard@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
@@ -11,19 +11,19 @@
 ; **************************************************************************** ;
 
 ; Prototype :
-; size_t ft_isascii(int c);
+; size_t ft_isprint(int c);
 
 section .text
-	global ft_isascii
+	global ft_isprint
 
 ret_else:          ; label if condition is not fullfilled
 	mov rax, 0     ; set return code to 0
 	ret            ; return
 
-ft_isascii:
-	cmp rdi, 0     ; compare c with 0
+ft_isprint:
+	cmp rdi, 32    ; compare c with 0
 	jl ret_else    ; if c < 0, jump to ret_else
-	cmp rdi, 127   ; compate c with 127 (end of ascii table)
+	cmp rdi, 126   ; compate c with 127 (end of ascii table)
 	jg ret_else    ; if c > 127, jump to ret_else
 	mov rax, 1     ; if none of these jump append, set return code to 1
 	ret            ; return

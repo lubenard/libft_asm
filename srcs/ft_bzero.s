@@ -24,4 +24,4 @@ loop:
 	inc rcx                  ; increment rcx, aka counter of loop
 	cmp rcx, rsi             ; compare rcx with 19
 	jl loop                  ; if rcx < rsi (second parameter), loop
-	ret
+	ret                      ; return

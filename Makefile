@@ -6,7 +6,7 @@
 #    By: lubenard <lubenard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/30 16:12:37 by lubenard          #+#    #+#              #
-#    Updated: 2020/03/31 22:15:38 by lubenard         ###   ########.fr        #
+#    Updated: 2020/04/01 13:09:02 by lubenard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,12 @@ NAME 	=	libfts.a
 SRCDIR	=	srcs
 INCDIR	=	includes
 OBJDIR	=	objs
-FILES	=	ft_bzero.s		\
-			ft_isascii.s	\
+FILES	=	ft_isascii.s	\
+			ft_isalnum.s	\
+			ft_isalpha.s	\
+			ft_isdigit.s	\
+			ft_isprint.s	\
+			ft_bzero.s		\
 			ft_strlen.s		
 
 SRCS	=	$(addprefix $(SRCDIR)/, $(FILES))

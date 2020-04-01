@@ -9,3 +9,4 @@ vgcore.*
 *.swiftdoc
 *.gen
 core
+test
