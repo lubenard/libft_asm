@@ -175,6 +175,20 @@ void bzero_tests(char *fun_name)
 	compare_str(fun_name, "fer is filled", real, test);
 }
 
+/*
+** Test function memcpy
+*/
+
+void memcpy_tests(char *fun_name)
+{
+	char real[19];
+	char test[19];
+
+	compare_str(fun_name, "my buffer is filled", memcpy(real, "my buffer is filled", 19), ft_memcpy(test, "my buffer is filled", 19));
+	compare_str(fun_name, "fer is filled", memcpy(real, "fer is filled", 13), ft_memcpy(test, "fer is filled", 13));
+}
+
+
 void print_header(char *argument, void (*func)(char *))
 {
 	printf("===== Testing %s =====\n", argument);
@@ -191,5 +205,6 @@ int main(void)
 	print_header("puts", puts_tests);
 	print_header("bzero", bzero_tests);
 	print_header("strlen", strlen_tests);
+	print_header("memcpy", memcpy_tests);
 	return (0);
 }

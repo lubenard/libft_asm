@@ -27,7 +27,8 @@ FILES	=	ft_isascii.s	\
 			ft_tolower.s	\
 			ft_puts.s		\
 			ft_bzero.s		\
-			ft_strlen.s		
+			ft_strlen.s		\
+			ft_memcpy.s
 
 SRCS	=	$(addprefix $(SRCDIR)/, $(FILES))
 OBJS	=	$(SRCS:$(SRCDIR)/%.s=$(OBJDIR)/%.o)

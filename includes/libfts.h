@@ -6,7 +6,7 @@
 /*   By: lubenard <lubenard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/30 19:06:49 by lubenard          #+#    #+#             */
-/*   Updated: 2020/04/01 17:40:05 by lubenard         ###   ########.fr       */
+/*   Updated: 2020/04/02 23:23:21 by lubenard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,7 @@ int		ft_puts(const char *s);
 
 void	ft_bzero(void *s, size_t n);
 size_t	ft_strlen(const char *s);
+
+void	*ft_memcpy(void *dest, const void *src, size_t n);
 
 #endif
