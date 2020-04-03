@@ -57,9 +57,9 @@ int compare_str(char *function, char *test, char *s1, char *s2)
 	else
 	{
 		print_result(test, FAILED);
-		printf("\t%s %s returned %s with parameter '%s'\n", REAL,
+		printf("\t%s %s returned '%s' with parameter '%s'\n", REAL,
 		function, s1, test);
-		printf("\t%s %s returned %s with parameter '%s'\n", MINE,
+		printf("\t%s %s returned '%s' with parameter '%s'\n", MINE,
 		function, s2, test);
 	}
 	return (0);
@@ -102,6 +102,31 @@ void isascii_tests(char *fun_name)
 }
 
 /*
+** Test function isalpha
+*/
+
+void isalpha_tests(char *fun_name)
+{
+	compare_int(fun_name, "-1", isalpha(-1), ft_isalpha(-1));
+	compare_int(fun_name, "0", isalpha(0), ft_isalpha(0));
+	compare_int(fun_name, "100", isalpha(100), ft_isalpha(100));
+	compare_int(fun_name, "128", isalpha(128), ft_isalpha(128));
+}
+
+/*
+** Test function isalnum
+*/
+
+void isalnum_tests(char *fun_name)
+{
+	compare_int(fun_name, "-1", isalpha(-1), ft_isalpha(-1));
+	compare_int(fun_name, "0", isalpha(0), ft_isalpha(0));
+	compare_int(fun_name, "100", isalpha(100), ft_isalpha(100));
+	compare_int(fun_name, "128", isalpha(128), ft_isalpha(128));
+}
+
+
+/*
 ** Test function toupper
 */
 
@@ -131,8 +156,6 @@ void tolower_tests(char *fun_name)
 
 void puts_tests(char *fun_name)
 {
-	(void)fun_name;
-	//ft_puts("abdef");
 	compare_int(fun_name, "abcde", puts("abcde"), ft_puts("abcde"));
 	compare_int(fun_name, "abcdefh", puts("abcdefh"), ft_puts("abcdefh"));
 	compare_int(fun_name, "", puts(""), ft_puts(""));
@@ -188,7 +211,6 @@ void memcpy_tests(char *fun_name)
 	compare_str(fun_name, "fer is filled", memcpy(real, "fer is filled", 13), ft_memcpy(test, "fer is filled", 13));
 }
 
-
 void print_header(char *argument, void (*func)(char *))
 {
 	printf("===== Testing %s =====\n", argument);
@@ -200,6 +222,8 @@ int main(void)
 	print_header("isascii", isascii_tests);
 	print_header("isprint", isprint_tests);
 	print_header("isdigit", isdigit_tests);
+	print_header("isalpha", isalpha_tests);
+	print_header("isalnum", isalnum_tests);
 	print_header("toupper", toupper_tests);
 	print_header("tolower", tolower_tests);
 	print_header("puts", puts_tests);
