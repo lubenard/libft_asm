@@ -151,6 +151,19 @@ void tolower_tests(char *fun_name)
 }
 
 /*
+** Test function strcat
+*/
+
+void strcat_tests(char *fun_name)
+{
+	char real[19] = "hey ";
+	char test[19] = "hey ";
+
+	compare_str(fun_name, "hey you", strcat(real, "you!"), ft_strcat(test, "you!"));
+}
+
+
+/*
 ** Test function strlen
 */
 
@@ -187,16 +200,33 @@ void bzero_tests(char *fun_name)
 	test = strdup("my buffer is filled");
 
 	bzero(real, strlen(real));
-	bzero(test, strlen(test));
+	ft_bzero(test, strlen(test));
 	compare_str(fun_name, "my buffer is filled", real, test);
 
 	real = strdup("my buffer is filled");
 	test = strdup("my buffer is filled");
 
 	bzero(real, 6);
-	bzero(test, 6);
+	ft_bzero(test, 6);
 	compare_str(fun_name, "fer is filled", real, test);
 }
+
+/*
+** Test function memset
+*/
+
+void memset_tests(char *fun_name)
+{
+	(void)fun_name;
+	//char real[16] = "OOOH, un monstre";
+	char test[16] = "OOOH, un monstre";
+
+	ft_memset(test, 'A', 3);
+	printf("test = %s\n", test);
+	//compare_str(fun_name, "OOOH un monstre", memset(real, 'A', 3),
+	//										 ft_memset(test, 'A',3));
+}
+
 
 /*
 ** Test function memcpy
@@ -204,11 +234,20 @@ void bzero_tests(char *fun_name)
 
 void memcpy_tests(char *fun_name)
 {
-	char real[19];
-	char test[19];
+	/*char real[19] = "Salut you !";
+	char test[19] = "Salut you !";
 
 	compare_str(fun_name, "my buffer is filled", memcpy(real, "my buffer is filled", 19), ft_memcpy(test, "my buffer is filled", 19));
-	compare_str(fun_name, "fer is filled", memcpy(real, "fer is filled", 13), ft_memcpy(test, "fer is filled", 13));
+	compare_str(fun_name, "fer is filled", memcpy(real, "fer is filled", 13), ft_memcpy(test, "fer is filled", 13));*/
+
+	(void)fun_name;
+
+	//char real2[19] = "Salut you !";
+	char test2[11] = "Salut you !";
+
+	//compare_str(fun_name, "hello you", memcpy(real2, "Hello", 5), ft_memcpy(test2, "Hello", 5));
+
+	printf("test2 = %s\n", (char *)ft_memcpy(test2, "Hello", 3));
 }
 
 void print_header(char *argument, void (*func)(char *))
@@ -226,9 +265,11 @@ int main(void)
 	print_header("isalnum", isalnum_tests);
 	print_header("toupper", toupper_tests);
 	print_header("tolower", tolower_tests);
+	print_header("strcat", strcat_tests);
 	print_header("puts", puts_tests);
 	print_header("bzero", bzero_tests);
 	print_header("strlen", strlen_tests);
 	print_header("memcpy", memcpy_tests);
+	print_header("memset", memset_tests);
 	return (0);
 }

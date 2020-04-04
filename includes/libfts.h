@@ -6,7 +6,7 @@
 /*   By: lubenard <lubenard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/30 19:06:49 by lubenard          #+#    #+#             */
-/*   Updated: 2020/04/02 23:23:21 by lubenard         ###   ########.fr       */
+/*   Updated: 2020/04/04 00:03:08 by lubenard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,14 @@ int		ft_isdigit(int c);
 int		ft_isalpha(int c);
 int		ft_isalnum(int c);
 
+/*
+** toupper / tolower
+*/
+
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+
+char	*ft_strcat(char *dest, char *src);
 
 int		ft_puts(const char *s);
 
@@ -34,5 +40,7 @@ void	ft_bzero(void *s, size_t n);
 size_t	ft_strlen(const char *s);
 
 void	*ft_memcpy(void *dest, const void *src, size_t n);
+
+void	*ft_memset(void *s, int c, size_t n);
 
 #endif
