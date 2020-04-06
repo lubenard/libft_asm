@@ -238,6 +238,22 @@ void memcpy_tests(char *fun_name)
 	compare_str(fun_name, "hello you", memcpy(real2, "Hello", 4), ft_memcpy(test2, "Hello", 4));
 }
 
+/*
+** Test function strdup
+*/
+
+void strdup_tests(char *fun_name)
+{
+	(void)fun_name;
+	char *str = strdup("test strdup ahahhahah");
+
+	//char *ret1 = strdup(str);
+	//char *ret2 = ft_strdup(str);
+	//printf("rl_strdup %p / %p %s\n", str, ret1,ret1);
+	//printf("ft_strdup %p / %p %s\n", str, ret2,ret2);
+	compare_str(fun_name, "test strdup", strdup(str), ft_strdup(str));
+}
+
 void print_header(char *argument, void (*func)(char *))
 {
 	printf("===== Testing %s =====\n", argument);
@@ -259,5 +275,6 @@ int main(void)
 	print_header("strlen", strlen_tests);
 	print_header("memcpy", memcpy_tests);
 	print_header("memset", memset_tests);
+	print_header("strdup", strdup_tests);
 	return (0);
 }

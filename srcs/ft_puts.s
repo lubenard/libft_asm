@@ -6,7 +6,7 @@
 ;    By: lubenard <lubenard@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2020/04/01 17:33:53 by lubenard          #+#    #+#              ;
-;    Updated: 2020/04/03 21:03:34 by lubenard         ###   ########.fr        ;
+;    Updated: 2020/04/06 13:56:57 by lubenard         ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -18,7 +18,7 @@ section .rodata        ; this section contains read-only data
 
 section .text
 	global ft_puts
-	extern ft_strlen  ; we say that ft_strlen is extrenal as this program
+	extern ft_strlen  ; we say that ft_strlen is external as this program
 
 print_newline:
 	mov rax, 4        ; re set rax to syscall for write
