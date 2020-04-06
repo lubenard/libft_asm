@@ -6,7 +6,7 @@
 ;    By: lubenard <lubenard@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2020/04/03 23:54:05 by lubenard          #+#    #+#              ;
-;    Updated: 2020/04/04 00:26:55 by lubenard         ###   ########.fr        ;
+;    Updated: 2020/04/06 13:48:18 by lubenard         ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -17,11 +17,9 @@ section .text
 	global ft_memset
 
 ft_memset:
-	mov rcx, 0               ; set rcx (counter) to 0
-loop:
-	mov [rdi + rcx], rsi
-	inc rcx                  ; increment rcx, aka counter of loop
-	cmp rcx, rdx             ; compare rcx with third parameter (n)
-	jl loop                  ; if rcx < rsi (third parameter), loop
-	mov rax, rdi
-	ret                      ; return
+	mov rcx, rdx   ; set rdx (aka size_t n) as counter
+	mov rdx, rdi   ; backup 1st arg to save pointer
+	mov rax, rsi   ; setting the source char in al
+	rep stosb      ; loop rcx times and copy rsi into rdi
+	mov rax, rdx   ; set rdx as return string
+	ret            ; return

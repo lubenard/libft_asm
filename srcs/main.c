@@ -218,13 +218,11 @@ void bzero_tests(char *fun_name)
 void memset_tests(char *fun_name)
 {
 	(void)fun_name;
-	//char real[16] = "OOOH, un monstre";
-	char test[16] = "OOOH, un monstre";
+	char *real = strdup("OOOH un monstre");
+	char *test = strdup("OOOH un monstre");
 
-	ft_memset(test, 'A', 3);
-	printf("test = %s\n", test);
-	//compare_str(fun_name, "OOOH un monstre", memset(real, 'A', 3),
-	//										 ft_memset(test, 'A',3));
+	compare_str(fun_name, "OOOH un monstre", memset(real, 'A', 3),
+											 ft_memset(test, 'A',3));
 }
 
 
@@ -234,20 +232,10 @@ void memset_tests(char *fun_name)
 
 void memcpy_tests(char *fun_name)
 {
-	/*char real[19] = "Salut you !";
-	char test[19] = "Salut you !";
+	char *real2 = strdup("Salut you !");
+	char *test2 = strdup("Salut you !");
 
-	compare_str(fun_name, "my buffer is filled", memcpy(real, "my buffer is filled", 19), ft_memcpy(test, "my buffer is filled", 19));
-	compare_str(fun_name, "fer is filled", memcpy(real, "fer is filled", 13), ft_memcpy(test, "fer is filled", 13));*/
-
-	(void)fun_name;
-
-	//char real2[19] = "Salut you !";
-	char test2[11] = "Salut you !";
-
-	//compare_str(fun_name, "hello you", memcpy(real2, "Hello", 5), ft_memcpy(test2, "Hello", 5));
-
-	printf("test2 = %s\n", (char *)ft_memcpy(test2, "Hello", 3));
+	compare_str(fun_name, "hello you", memcpy(real2, "Hello", 4), ft_memcpy(test2, "Hello", 4));
 }
 
 void print_header(char *argument, void (*func)(char *))
