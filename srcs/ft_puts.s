@@ -6,7 +6,7 @@
 ;    By: lubenard <lubenard@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2020/04/01 17:33:53 by lubenard          #+#    #+#              ;
-;    Updated: 2020/04/06 13:56:57 by lubenard         ###   ########.fr        ;
+;    Updated: 2020/04/07 20:24:59 by lubenard         ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -24,7 +24,7 @@ print_newline:
 	mov rax, 4        ; re set rax to syscall for write
 	mov rcx, newline  ; print newline
 	mov rdx, 1        ; set size of string (1)
-	int 80h           ; syscall
+	syscall           ; syscall
 	mov rax, rsi      ; restore size for return
 	inc rax           ; increment size, bc minimal size is 1
 	ret               ; return rax

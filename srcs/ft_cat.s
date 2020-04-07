@@ -6,7 +6,7 @@
 ;    By: lubenard <lubenard@student.42.fr>          +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2020/04/06 21:09:14 by lubenard          #+#    #+#              ;
-;    Updated: 2020/04/07 20:04:57 by lubenard         ###   ########.fr        ;
+;    Updated: 2020/04/07 20:29:19 by lubenard         ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -18,6 +18,7 @@ section .bss
 
 section .text
 	global ft_cat
+	extern ft_puts
 
 ft_cat:
 	cmp rdi, 0

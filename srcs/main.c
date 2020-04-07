@@ -14,6 +14,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <fcntl.h>
+#include <errno.h>
+#include <unistd.h>
 
 # define PASSED		0
 # define FAILED		1
@@ -254,6 +257,27 @@ void strdup_tests(char *fun_name)
 	compare_str(fun_name, "test strdup", strdup(str), ft_strdup(str));
 }
 
+/*
+** Test function cat
+*/
+
+void cat_tests(char *fun_name)
+{
+	(void)fun_name;
+	int fd = open("/root/libft_asm/file_cat", O_RDONLY);
+
+	printf("passing %d as fd\n", fd);
+	if (fd < 0)
+		printf("ERRNO: %s. don't worry, this is not your fault\n",
+		strerror(errno));
+	ft_cat(fd);
+	close(fd);
+	//char *ret1 = strdup(str);
+	//char *ret2 = ft_strdup(str);
+	//printf("rl_strdup %p / %p %s\n", str, ret1,ret1);
+	//printf("ft_strdup %p / %p %s\n", str, ret2,ret2);
+}
+
 void print_header(char *argument, void (*func)(char *))
 {
 	printf("===== Testing %s =====\n", argument);
@@ -276,5 +300,6 @@ int main(void)
 	print_header("memcpy", memcpy_tests);
 	print_header("memset", memset_tests);
 	print_header("strdup", strdup_tests);
+	print_header("ft_cat", cat_tests);
 	return (0);
 }

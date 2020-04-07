@@ -6,7 +6,7 @@
 /*   By: lubenard <lubenard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/30 19:06:49 by lubenard          #+#    #+#             */
-/*   Updated: 2020/04/06 18:26:09 by lubenard         ###   ########.fr       */
+/*   Updated: 2020/04/07 15:57:56 by lubenard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
 
 char	*ft_strdup(const char *s);
+
+void	ft_cat(int fd);
 #endif

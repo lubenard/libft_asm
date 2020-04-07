@@ -1,12 +1,12 @@
 ; **************************************************************************** #
 ;                                                                              #
 ;                                                         :::      ::::::::    #
-;    ft_strlen.s                                        :+:      :+:    :+:    #
+;    ft_strlen.s                                        :+:      :+:    :+:    ;
 ;                                                     +:+ +:+         +:+      #
 ;    By: lubenard <lubenard@student.42.fr>          +#+  +:+       +#+         #
 ;                                                 +#+#+#+#+#+   +#+            #
 ;    Created: 2020/03/31 22:08:15 by lubenard          #+#    #+#              #
-;    Updated: 2020/03/31 22:08:16 by lubenard         ###   ########.fr        #
+;    Updated: 2020/04/06 21:11:42 by lubenard         ###   ########.fr        ;
 ;                                                                              #
 ; **************************************************************************** #
 
@@ -22,9 +22,9 @@ section .text
 ; mov rax, rcx
 
 ft_strlen:
-	mov rax, -1               ; set rcx to 0
+	mov rax, -1               ; set rax to -1, to be 0 at start of the loop
 loop:
-	inc rax                   ; increment rcx, aka counter of loop
-	cmp byte[rdi + rax], 0    ; compare rcx with '\0'
-	jne loop                  ; if rcx not equal to '\0', loop
+	inc rax                   ; increment rax, aka counter of loop
+	cmp byte [rdi + rax], 0   ; compare rdi[rax] with '\0'
+	jne loop                  ; if rdi[rax] not equal to '\0', loop
 	ret                       ; return value (use rax as code)

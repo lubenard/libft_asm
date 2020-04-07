@@ -6,7 +6,7 @@
 #    By: lubenard <lubenard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/30 16:12:37 by lubenard          #+#    #+#              #
-#    Updated: 2020/04/06 18:24:56 by lubenard         ###   ########.fr        #
+#    Updated: 2020/04/07 16:06:17 by lubenard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,8 @@ FILES	=	ft_isascii.s	\
 			ft_strlen.s		\
 			ft_memcpy.s		\
 			ft_memset.s		\
-			ft_strdup.s
+			ft_strdup.s		\
+			ft_cat.s
 
 SRCS	=	$(addprefix $(SRCDIR)/, $(FILES))
 OBJS	=	$(SRCS:$(SRCDIR)/%.s=$(OBJDIR)/%.o)
